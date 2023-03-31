@@ -1,0 +1,14 @@
+.btn {
+    background-color: #085f63;
+    color: #fff;
+    width: 150px;
+    height: 40px;
+    margin: 20px;
+    border-radius: 1px #7fa99b;
+    ;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+
+}

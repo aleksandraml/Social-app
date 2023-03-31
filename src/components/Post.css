@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova:ital@1&display=swap');
+
+.post {
+    border: 2px solid #97cba9;
+    background-color: #7fa99b;
+    padding: 30px;
+    margin: 50px 250px;
+    position: relative;
+}
+
+.postData {
+    padding: 10px;
+}
+
+.postMeta {
+    font-family: 'Bona Nova', serif;
+    font-size: 20px;
+    color: #35495e;
+    font-weight: bold;
+    position: relative;
+    bottom: 70px;
+    left: 400px;
+}
+
+.avatar {
+    position: relative;
+    right: 100px;
+    top: 5px;
+}
+
+.avatar img {
+    border-radius: 50%;
+    width: 60px;
+}
+
+.author {
+    font-size: 40px;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    text-transform: uppercase;
+    position: relative;
+    bottom: 80px;
+    color: #085f63;
+}
+
+.content {
+    font-family: 'Bona Nova', serif;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.likes {
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    font-size: 20px;
+    color: #35495e;
+    font-weight: 600;
+    padding-top: 20px;
+    position: relative;
+    letter-spacing: 2px;
+}
+
+.likes span {
+    position: relative;
+    display: inline-block;
+    font-size: 15px;
+    text-transform: uppercase;
+    animation: flip 12s infinite;
+    animation-delay: calc(.4s * var(--i));
+    cursor: pointer;
+}
+
+@keyframes flip {
+
+    0%,
+    80% {
+        transform: rotateY(360deg)
+    }
+}
+

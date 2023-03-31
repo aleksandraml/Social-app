@@ -1,0 +1,22 @@
+.Login form {
+    border: 1px solid #7fa99b;
+    max-width: 600px;
+    margin: auto;
+    padding: 15px;
+    background-color: #97cba9;
+}
+
+.Login form input {
+    display: block;
+    width: 90%;
+    height: 30px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.Login form input:hover {
+    background-color: #7fa99b;
+    border: 1px solid #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
