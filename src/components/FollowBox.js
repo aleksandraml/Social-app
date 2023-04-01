@@ -1,15 +1,17 @@
+import "./FollowBox.css";
+
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const FollowsBox = (props) => {
+const FollowRecommendations = (props) => {
 
-    const [followsBox, setFollowsBox] = useState([]);
+    const [recommendations, setRecommendations] = useState([]);
 
-    const getFollows = () => {
+    const getRecommendations = () => {
         axios.post('https://akademia108.pl/api/social-app/follows/recommendations')
             .then((res) => {
                 // console.log(res.data)
-                setFollowsBox(res.data)
+                setRecommendations(res.data)
             })
             .catch((error) => {
                 console.log(error);
@@ -20,23 +22,35 @@ const FollowsBox = (props) => {
 
 
     useEffect(() => {
-        getFollows()
+        getRecommendations()
 
     }, [])
 
-    
+    const follow = (id) => {
+        axios.post("http://akademia108.pl/api/social-app/follows/follow", {
+            leader_id: id,
+        })
+            .then(() => {
+                props.getLatestPosts();
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }
+
+
 
     // console.log(followsBox.avatar.username)
 
     return (
         <div className="followBox">
-            {followsBox.map(followBox => {
-                 
+            {recommendations.map(recommendation => {
+
                 return (
-                    <div className="follow" key={followBox.id}>
-                        <img src={followBox.avatar_url} alt={followBox.username} />
-                        <h3>recommendation username</h3>
-                        <button className="btn">Follow</button>
+                    <div className="follow" key={recommendation.id}>
+                        <img src={recommendation.avatar_url} alt={recommendation.username} />
+                        <h3>{recommendation.username}</h3>
+                        <button className="thisBtn" onClick={() => follow(recommendation.id)}>Follow</button>
                     </div>
                 )
             })}
@@ -45,4 +59,4 @@ const FollowsBox = (props) => {
 }
 
 
-export default FollowsBox;
+export default FollowRecommendations;

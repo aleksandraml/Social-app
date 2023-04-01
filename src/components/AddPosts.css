@@ -1,4 +1,4 @@
-.btn {
+.thisBtn {
     background-color: #085f63;
     color: #fff;
     width: 150px;
@@ -12,8 +12,14 @@
     cursor: pointer;
     position: relative;
     top:10px;
-    right: 330px;
+    right: 30px;
 
+}
+
+.thisBtn:hover {
+    background-color: #fff;
+    color: #085f63;
+    cursor: pointer;
 }
 
 form textarea {

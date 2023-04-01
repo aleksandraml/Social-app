@@ -6,7 +6,7 @@ import Post from "../components/Posts";
 
 
 import React, { useState, useEffect } from 'react';
-import FollowBox from "../components/FollowBox";
+import FollowRecommendations from "../components/FollowBox";
 
 const Home = (props) => {
 
@@ -50,12 +50,12 @@ const Home = (props) => {
 
       <div>
         {props.user && <AddPosts getPrevPosts={getPrevPosts} />}
-        {props.user && <FollowBox user={props.user} getLatestPosts={getLatestPosts} post={posts} />}
+        {props.user && <FollowRecommendations user={props.user} getLatestPosts={getLatestPosts} post={posts} />}
 
         <div className="postList">
           {posts.map(post => {
 
-            return <Post key={post.id} post={post} user={props.user} setPosts={setPosts} />
+            return <Post key={post.id} post={post} user={props.user} setPosts={setPosts} getLatestPosts={getLatestPosts} />
           })}
         </div>
         <button onClick={getNextPosts} className="btn">Load more</button>
